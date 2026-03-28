@@ -1,0 +1,157 @@
+.charter-page { min-height: 100vh; background: var(--bg); }
+
+.charter-hero {
+  background: linear-gradient(135deg, #003d22 0%, #006B3C 100%);
+  padding: 56px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.charter-hero-inner { max-width: 640px; margin: 0 auto; }
+
+.charter-hero-label {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  background: rgba(252,209,22,0.2); color: #FCD116;
+  padding: 4px 14px; border-radius: 100px; margin-bottom: 16px;
+}
+
+.charter-hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: #fff;
+  margin-bottom: 14px;
+}
+
+.charter-hero-subtitle {
+  font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 28px;
+}
+
+.charter-cta-btn {
+  background: #FCD116; color: #111827; border: none;
+}
+
+.charter-cta-btn:hover { background: #e6bb00; transform: translateY(-1px); color: #111827; }
+
+.charter-commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.charter-commitment-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.2s;
+}
+
+.charter-commitment-card:hover { box-shadow: var(--shadow-md); }
+
+.charter-commitment-icon {
+  width: 48px; height: 48px; border-radius: var(--radius);
+  background: var(--primary-50); color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--primary-100);
+}
+
+.charter-commitment-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem; font-weight: 700; color: var(--text);
+}
+
+.charter-commitment-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.charter-commitment-list li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;
+}
+
+.charter-check { color: var(--success); flex-shrink: 0; margin-top: 2px; }
+
+.charter-fees-section { background: var(--surface); }
+
+.charter-fees-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.charter-fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.charter-fees-table th {
+  background: var(--primary-50);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+
+.charter-fees-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.charter-fees-table tr:last-child td { border-bottom: none; }
+.charter-fees-table tr:hover td { background: var(--primary-50); }
+
+.charter-fee-free { color: var(--success); font-weight: 700; }
+.charter-fee-amount { color: var(--text); font-weight: 700; }
+.charter-fee-note { color: var(--text-muted); font-size: 0.8rem; }
+
+.charter-fees-disclaimer {
+  font-size: 0.8rem; color: var(--text-muted); text-align: center;
+}
+
+.charter-complaint-section { background: var(--bg); }
+
+.charter-complaint-inner {
+  display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+}
+
+.charter-complaint-text p {
+  color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px;
+}
+
+.charter-complaint-channels {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+}
+
+.charter-complaint-channels li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.875rem; color: var(--text-secondary);
+}
+
+.charter-complaint-channels li svg { color: var(--success); flex-shrink: 0; }
+
+.charter-complaint-actions {
+  display: flex; flex-direction: column; gap: 12px; flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .charter-complaint-inner { grid-template-columns: 1fr; }
+  .charter-complaint-actions { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  .charter-hero { padding: 40px 0; }
+  .charter-commitments-grid { grid-template-columns: 1fr; }
+  .charter-complaint-actions .btn { width: 100%; justify-content: center; }
+}
