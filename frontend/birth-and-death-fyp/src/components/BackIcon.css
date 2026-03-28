@@ -1,0 +1,56 @@
+.back-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary, #333);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.back-icon-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--primary, #338833);
+}
+
+.back-icon-btn:active {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+}
+
+/* Light backgrounds */
+.form-page-hero .back-icon-btn,
+.verify-hero .back-icon-btn,
+.profile-hero .back-icon-btn {
+    color: #fff;
+}
+
+.form-page-hero .back-icon-btn:hover,
+.verify-hero .back-icon-btn:hover,
+.profile-hero .back-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.form-page-hero .back-icon-btn:active,
+.verify-hero .back-icon-btn:active,
+.profile-hero .back-icon-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 640px) {
+    .back-icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-icon-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
