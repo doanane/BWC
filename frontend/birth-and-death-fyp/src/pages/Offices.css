@@ -1,0 +1,456 @@
+.offices-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+
+.offices-hero {
+  background: linear-gradient(135deg, #003d22 0%, #006B3C 100%);
+  padding: 56px 0 48px;
+  color: #fff;
+  text-align: center;
+}
+
+.offices-hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.offices-hero-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(252, 209, 22, 0.2);
+  color: #FCD116;
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.offices-hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.offices-hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.offices-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.offices-stat {
+  text-align: center;
+}
+
+.offices-stat strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #FCD116;
+  line-height: 1.1;
+}
+
+.offices-stat span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+.offices-controls-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.offices-search-wrap {
+  position: relative;
+  max-width: 560px;
+}
+
+.offices-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.offices-search-input {
+  width: 100%;
+  padding: 11px 44px 11px 44px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  transition: var(--transition);
+  outline: none;
+}
+
+.offices-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-100);
+  background: var(--surface);
+}
+
+.offices-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.offices-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.offices-search-clear:hover {
+  color: var(--text);
+  background: var(--border-light);
+}
+
+
+.offices-tabs-bar {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+}
+
+.offices-tabs-scroll {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.offices-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.offices-tab {
+  flex-shrink: 0;
+  padding: 14px 20px;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.offices-tab:hover {
+  color: var(--primary);
+  background: var(--primary-50);
+}
+
+.offices-tab--active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+
+.offices-list {
+  padding-bottom: 80px;
+}
+
+.offices-region-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 28px;
+  transition: box-shadow 0.2s;
+}
+
+.offices-region-section:hover {
+  box-shadow: var(--shadow);
+}
+
+.offices-region-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 28px;
+  background: linear-gradient(90deg, var(--primary-50) 0%, var(--surface) 100%);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.offices-region-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.offices-region-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.offices-region-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.offices-contact-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.offices-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.offices-contact-item:last-child {
+  border-right: none;
+}
+
+.offices-contact-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.offices-contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.offices-contact-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.offices-contact-value {
+  font-size: 0.84rem;
+  color: var(--text);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.offices-contact-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.offices-contact-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.offices-region-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.offices-district-count {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-100);
+  padding: 4px 12px;
+  border-radius: 100px;
+  align-self: center;
+  white-space: nowrap;
+}
+
+
+.offices-district-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-top: none;
+}
+
+.offices-district-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 20px;
+  background: var(--surface);
+  transition: background 0.15s;
+  cursor: default;
+  text-decoration: none;
+}
+
+.offices-district-card:hover {
+  background: var(--primary-50);
+}
+
+.offices-district-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.offices-district-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.offices-district-name {
+  font-size: 0.875rem;
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offices-district-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+
+.offices-empty {
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.offices-empty svg {
+  color: var(--text-muted);
+}
+
+.offices-empty p {
+  font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .offices-hero {
+    padding: 40px 0 36px;
+  }
+
+  .offices-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .offices-hero-stats {
+    gap: 24px;
+  }
+
+  .offices-region-header {
+    padding: 16px 20px;
+  }
+
+  .offices-region-name {
+    font-size: 1rem;
+  }
+
+  .offices-contact-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offices-contact-item {
+    padding: 14px 18px;
+  }
+
+  .offices-district-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .offices-district-card {
+    padding: 11px 16px;
+  }
+
+  .offices-district-name {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offices-contact-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .offices-contact-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .offices-contact-item:last-child {
+    border-bottom: none;
+  }
+
+  .offices-district-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .offices-tab {
+    padding: 12px 14px;
+    font-size: 0.8rem;
+  }
+}
