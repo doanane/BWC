@@ -1,0 +1,333 @@
+/* ── Auth Top Bar ───────────────────────────────────── */
+.auth-topbar {
+  background: #003d22;
+  border-bottom: 2px solid rgba(252, 209, 22, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+  position: relative;
+  z-index: 200;
+  width: 100%;
+}
+
+.auth-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 24px;
+  gap: 12px;
+}
+
+.atb-left,
+.atb-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Trigger button ─────────────────────────────────── */
+.atb-trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.atb-trigger:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  border-color: rgba(252, 209, 22, 0.35);
+}
+
+.atb-trigger.acc-on {
+  border-color: #FCD116;
+  color: #FCD116;
+}
+
+.atb-trigger-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.atb-chevron {
+  transition: transform 0.18s;
+  flex-shrink: 0;
+}
+
+.atb-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown ───────────────────────────────────────── */
+.atb-dropdown-wrap {
+  position: relative;
+}
+
+.atb-dropdown {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  min-width: 210px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 6px;
+  z-index: 500;
+  animation: atbDdIn 0.15s ease;
+}
+
+.atb-dd-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 6px 6px;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 4px;
+}
+
+.atb-dd-head span {
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #9ca3af;
+}
+
+.atb-dd-close {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.atb-dd-close:hover {
+  color: #006B3C;
+  border-color: rgba(0, 107, 60, 0.3);
+  background: rgba(0, 107, 60, 0.06);
+}
+
+.atb-dropdown-right {
+  left: auto;
+  right: 0;
+  min-width: 170px;
+}
+
+@keyframes atbDdIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Dropdown items ─────────────────────────────────── */
+.atb-dd-section-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  padding: 6px 10px 3px;
+}
+
+.atb-dd-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background 0.13s, color 0.13s;
+}
+
+.atb-dd-item:hover {
+  background: #f3f4f6;
+  color: #006B3C;
+}
+
+.atb-dd-item.active {
+  background: rgba(0, 107, 60, 0.08);
+  color: #006B3C;
+  font-weight: 600;
+}
+
+.atb-dd-badge {
+  margin-left: auto;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #006B3C;
+  background: rgba(0, 107, 60, 0.1);
+  padding: 1px 6px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.atb-dd-reset {
+  color: #6b7280;
+  font-size: 0.77rem;
+}
+
+.atb-dd-reset:hover {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.atb-dd-divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 4px 4px;
+}
+
+/* ── Swatch dots ─────────────────────────────────────── */
+.atb-dd-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid #e5e7eb;
+}
+
+.atb-dd-swatch.hc {
+  background: linear-gradient(135deg, #000 50%, #fff 50%);
+}
+
+.atb-dd-swatch.nc {
+  background: linear-gradient(135deg, #fff 50%, #000 50%);
+}
+
+.atb-dd-swatch.gs {
+  background: linear-gradient(135deg, #888 50%, #bbb 50%);
+}
+
+/* ── Font size row ───────────────────────────────────── */
+.atb-dd-font-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 8px;
+}
+
+.atb-font-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  border: 1.5px solid #e5e7eb;
+  background: #f9fafb;
+  color: #374151;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.13s, border-color 0.13s;
+  flex-shrink: 0;
+}
+
+.atb-font-btn:hover:not(:disabled) {
+  background: rgba(0, 107, 60, 0.08);
+  border-color: #006B3C;
+  color: #006B3C;
+}
+
+.atb-font-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.atb-font-val {
+  flex: 1;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* ── Language selector ───────────────────────────────── */
+.atb-lang-wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.atb-lang-select {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.atb-lang-select:hover,
+.atb-lang-select:focus {
+  border-color: rgba(252, 209, 22, 0.5);
+}
+
+.atb-lang-select option {
+  background: #003d22;
+  color: #fff;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .auth-topbar-inner {
+    padding: 5px 14px;
+  }
+
+  .atb-trigger span:not(.atb-trigger-icon) {
+    display: none;
+  }
+
+  .atb-trigger {
+    padding: 5px 8px;
+    gap: 3px;
+  }
+
+  .atb-chevron {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .atb-lang-wrap svg {
+    display: none;
+  }
+}
