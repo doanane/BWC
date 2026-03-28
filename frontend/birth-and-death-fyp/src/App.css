@@ -1,0 +1,79 @@
+#root {
+  min-height: 100vh;
+}
+
+main.auth-main {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+}
+
+main:not(.auth-main) {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* App header & nav */
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 2rem;
+}
+
+.app-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.app-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #338833;
+}
+
+.app-brand-subtitle {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.app-nav a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.app-nav a:hover {
+  color: #338833;
+  text-decoration: none;
+}
+
+.app-nav a.app-nav--primary {
+  color: #338833;
+}
+
+.app-nav a.app-nav--cta {
+  background: linear-gradient(180deg, #2d8a2d 0%, #3da63d 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.app-nav a.app-nav--cta:hover {
+  opacity: 0.9;
+  color: #fff;
+}
