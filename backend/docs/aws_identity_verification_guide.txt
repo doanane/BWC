@@ -1,0 +1,68 @@
+AWS Identity Verification Guide for Ghana BDR (No Code)
+Date: 2026-03-16
+
+1) Short answer
+Yes, you can use Amazon Rekognition, but Rekognition alone cannot prove that a person is a genuine Ghanaian citizen.
+It can prove:
+- the person is live (not a photo/video spoof)
+- the selfie matches the ID face
+It cannot prove citizenship without an authoritative Ghana data source.
+
+2) Recommended high-trust flow (best practice)
+Step A: Basic account checks
+- Email OTP and phone OTP (Amazon Cognito + SES/SNS)
+
+Step B: Identity input
+- Collect Ghana Card number and date of birth
+- Optionally collect Ghana Card image and selfie
+
+Step C: Liveness check
+- Amazon Rekognition Face Liveness to confirm real human presence
+
+Step D: Face match
+- Amazon Rekognition CompareFaces between selfie and ID portrait
+
+Step E: Authoritative validation (most important)
+- Validate Ghana Card details against NIA or another official Ghana government source
+- This is the core check that confirms genuine Ghanaian identity
+
+Step F: Duplicate prevention
+- Store a secure hash of Ghana Card number for uniqueness checks
+- Optionally use Rekognition face collection search to reduce multi-account abuse
+
+Step G: Decision policy
+- Auto approve: NIA pass + liveness pass + face match above threshold
+- Manual review: unclear image or low confidence score
+- Reject: failed liveness, failed official ID validation, or fraud indicators
+
+3) AWS services to use
+- Amazon Rekognition: Face Liveness, CompareFaces, face dedup search
+- Amazon Textract: OCR and field extraction from ID images
+- Amazon Cognito: signup, MFA, account security
+- Amazon API Gateway + AWS Lambda: verification APIs
+- AWS Step Functions: orchestrate multi-step verification flow
+- Amazon S3 + AWS KMS: secure document storage and encryption
+- Amazon DynamoDB or Amazon RDS: verification metadata and audit records
+- Amazon CloudWatch + AWS CloudTrail: monitoring and audit trail
+
+4) Important reality check
+To ensure only genuine Ghanaians can register, you must rely on an official source of truth (NIA or equivalent government verification source).
+AWS services strengthen anti-fraud, but official identity authority is what confirms citizenship.
+
+5) Compliance and data protection checklist
+- Encrypt stored PII and documents (KMS)
+- Minimize stored data (store hashes where possible)
+- Define retention period for images and documents
+- Keep consent and audit logs for each verification decision
+- Restrict access with role-based permissions
+
+6) Practical rollout plan
+Phase 1 (fast): OTP + NIA validation + duplicate hash checks
+Phase 2 (stronger): Add Rekognition liveness and face match
+Phase 3 (enterprise): Add risk scoring, manual review queue, and full audit dashboards
+
+7) If NIA integration is not yet available
+Use a temporary risk-based model:
+- Rekognition liveness + face match
+- manual review for all successful captures
+- no final "verified Ghanaian" status until official check is live

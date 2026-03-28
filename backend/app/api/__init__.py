@@ -1,0 +1,26 @@
+from fastapi import APIRouter
+from app.api import auth, users, applications, documents, payments, certificates, notifications, deliveries, analytics, audit, penalties, misc, accessibility, chatbot, kyc, verify, reports, contact, nia, ai, statistics
+
+api_router = APIRouter()
+
+api_router.include_router(auth.router)
+api_router.include_router(users.router)
+api_router.include_router(applications.router)
+api_router.include_router(documents.router)
+api_router.include_router(payments.router)
+api_router.include_router(certificates.router)
+api_router.include_router(notifications.router)
+api_router.include_router(deliveries.router)
+api_router.include_router(analytics.router)
+api_router.include_router(audit.router)
+api_router.include_router(penalties.router)
+api_router.include_router(kyc.router)
+api_router.include_router(verify.router)
+api_router.include_router(misc.router)
+api_router.include_router(accessibility.router)
+api_router.include_router(chatbot.router)
+api_router.include_router(reports.router)
+api_router.include_router(contact.router)
+api_router.include_router(nia.router)
+api_router.include_router(ai.router)
+api_router.include_router(statistics.router)
