@@ -1,0 +1,220 @@
+.carousel {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #001e0f;
+}
+
+.carousel-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s ease;
+  opacity: 1;
+  filter: brightness(1.08) saturate(1.05);
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-overlay-green-dark,
+.carousel-overlay-green-mid,
+.carousel-overlay-green-light,
+.carousel-overlay-gold {
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.52) 35%,
+      rgba(0, 0, 0, 0.35) 55%,
+      rgba(0, 0, 0, 0.15) 75%,
+      rgba(0, 0, 0, 0.04) 100%);
+}
+
+.carousel-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 100px 0 80px;
+}
+
+.anim-right {
+  animation: slideFromRight .55s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+.anim-left {
+  animation: slideFromLeft .55s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.carousel-inner {
+  max-width: 680px;
+}
+
+.carousel-eyebrow {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  background: rgba(252, 209, 22, .18);
+  color: #FCD116;
+  padding: 5px 16px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(252, 209, 22, .35);
+}
+
+.carousel-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  color: #fff;
+  text-shadow: 0 3px 25px rgba(0, 0, 0, .7), 0 1px 8px rgba(0, 0, 0, .5);
+}
+
+.carousel-subtitle {
+  font-size: clamp(.98rem, 1.8vw, 1.18rem);
+  color: rgba(255, 255, 255, .95);
+  max-width: 600px;
+  line-height: 1.8;
+  margin-bottom: 42px;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, .6), 0 1px 5px rgba(0, 0, 0, .4);
+}
+
+.carousel-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: 2px solid rgba(255, 255, 255, .75);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, .2);
+  border-color: #fff;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+
+.carousel-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background .2s, transform .2s;
+  flex-shrink: 0;
+}
+
+.carousel-arrow-btn:hover {
+  background: rgba(255, 255, 255, .28);
+  border-color: rgba(255, 255, 255, .7);
+  transform: scale(1.1);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, .38);
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.carousel-dot.active {
+  background: #FCD116;
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    min-height: 72vh;
+  }
+
+  .carousel-content {
+    padding: 60px 0 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    min-height: 65vh;
+  }
+
+  .carousel-content {
+    padding: 48px 0 68px;
+  }
+
+  .carousel-arrow-btn {
+    width: 30px;
+    height: 30px;
+  }
+}
