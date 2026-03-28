@@ -1,0 +1,36 @@
+# Claude AI
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+alembic/versions/__pycache__/
+
+# Node
+node_modules/
+dist/
+.vite/
+*.local
+
+# Uploads / media
+backend/uploads/
+*.jpg
+*.jpeg
+*.png
+*.pdf
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
