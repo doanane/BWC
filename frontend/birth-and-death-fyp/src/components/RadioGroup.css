@@ -1,0 +1,52 @@
+.radio-group { display: flex; flex-direction: column; gap: 8px; }
+.radio-group-label { font-size: .875rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.radio-group-label .required { color: var(--error); }
+
+/* Layouts */
+.radio-options         { display: flex; flex-direction: column; gap: 8px; }
+.radio-options-horizontal { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+.radio-options-card    { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+
+/* Base option */
+.radio-option {
+  display: flex; align-items: flex-start; gap: 10px;
+  cursor: pointer; padding: 2px 0; position: relative;
+}
+.radio-option.disabled { opacity: .5; cursor: not-allowed; }
+
+/* Hidden native input */
+.radio-input { position: absolute; opacity: 0; width: 0; height: 0; }
+
+/* Custom indicator */
+.radio-indicator {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid var(--border); background: #fff;
+  flex-shrink: 0; margin-top: 1px; transition: all .2s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.radio-option.checked .radio-indicator {
+  border-color: var(--primary); background: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
+.radio-option.checked .radio-indicator::after {
+  content: ''; width: 6px; height: 6px;
+  background: #fff; border-radius: 50%; display: block;
+}
+
+/* Text area */
+.radio-text    { display: flex; align-items: flex-start; gap: 8px; }
+.radio-icon    { font-size: 1.1rem; flex-shrink: 0; }
+.radio-label   { display: block; font-size: .9rem; font-weight: 500; color: var(--text); }
+.radio-description { display: block; font-size: .8rem; color: var(--text-secondary); margin-top: 2px; }
+
+/* Card variant */
+.radio-card {
+  padding: 16px; border: 2px solid var(--border);
+  border-radius: var(--radius); background: #fff;
+  transition: all .2s ease; min-width: 160px; flex: 1;
+}
+.radio-card:hover:not(.disabled) { border-color: var(--primary-light); }
+.radio-card.checked {
+  border-color: var(--primary); background: var(--primary-50);
+  box-shadow: 0 0 0 3px var(--primary-100);
+}
