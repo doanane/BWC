@@ -1,0 +1,121 @@
+.snackbar-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+  max-width: 380px;
+  width: calc(100vw - 48px);
+}
+
+.snack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  background: #1e293b;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), opacity .35s ease;
+}
+
+.snack-enter {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.snack-exit {
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform .35s ease, opacity .35s ease;
+}
+
+.snack-success {
+  background: #15803d;
+}
+
+.snack-error {
+  background: #dc2626;
+}
+
+.snack-warning {
+  background: #d97706;
+  color: #fff;
+}
+
+.snack-info {
+  background: #2563eb;
+}
+
+.snack-icon {
+  width: 22px;
+  height: 22px;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.snack-icon svg,
+.snack-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.snack-msg {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.snack-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color .2s;
+}
+
+.snack-close:hover {
+  color: #fff;
+}
+
+.snack-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, .4);
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  animation: snackProgress linear forwards;
+  transform-origin: left;
+}
+
+@keyframes snackProgress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
